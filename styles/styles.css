@@ -1,0 +1,164 @@
+/* 
+COLORS:
+green: #678053 rgb(179,204,159);
+blu: #638abf rgb(99,138,191); 
+*/
+* {
+	cursor: none;
+}
+
+html, body {
+	font-family: 'Futura Condensed PT Medium';
+	width: 1920px;
+	height: 1080px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+#container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: #eaeaea;
+	width: 1920px;
+	height: 1080px;
+	background: url(../assets/bg-datarain.jpg) center no-repeat; 
+	background-size: cover;
+	overflow: hidden;
+}
+#fascia {
+	position: absolute;
+	bottom: 83px;
+	right: 0px;
+	z-index: 9999;
+}
+
+.drop {
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 75px 20px 0px 17px; 
+	top: -300px;
+	background-size: cover;
+	z-index: 1;
+	background: url(../assets/drop-near.png) center no-repeat;
+	background-size: cover;
+	/*color: red;
+	font-size: 2em;*/
+}
+.drop:before {
+	content: ' \25CF';
+	position: absolute;
+}
+.drop[data-category="1"]:before{
+	color: #555555;
+}
+.drop[data-category="2"]:before{
+	color: #678053;
+}
+.drop[data-category="3"]:before{
+	color: #638ABF;
+}
+.drop.far {
+	width: 50px;
+	height: 75px;
+	background: url(../assets/drop-far.png) center no-repeat;
+	background-size: cover;
+	z-index: 9996;
+}
+.drop.far:before {
+	font-size: 50px;
+	top: 18px;
+	left: 11px;
+}
+.drop.medium {
+	width: 100px;
+	height: 150px;
+	background: url(../assets/drop-medium.png) center no-repeat;
+	background-size: cover;
+	z-index: 9997;
+}
+.drop.medium:before {
+	font-size: 120px;
+	top: 20px;
+	left: 15px;
+}
+.drop.near {
+	width: 150px;
+	height: 225px;
+	background: url(../assets/drop-near.png) center no-repeat;
+	background-size: cover;
+	z-index: 9998;
+}
+.drop.near:before {
+	font-size: 180px;
+	top: 30px;
+	left: 22px;
+}
+.drop.active {
+	width: 170px;
+	height: 255px;
+}
+.drop.active,
+.drop.snapped {
+	z-index: 9999;
+	padding: 105px 20px 0px 20px;
+}
+.drop.active:before {
+	font-size: 0px;
+}
+.bubble {
+	position: absolute;
+	border: 20px solid white;
+	width: 800px;
+	min-height: 200px;
+	padding: 10px;
+	z-index: 9999;
+}
+.bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50px;
+	width: 0px;
+	height: 0px;
+	border: 110px solid transparent;
+	border-top-color: #fff;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -30px;
+	margin-bottom: -110px;
+	border-width: 110px 100px 0 0;
+	z-index: 9999;
+}
+.wrapper {
+	background: rgba(255,255,255,.8);
+	padding: 20px;
+	margin: 10px;
+	color: #000;
+	display: flex;
+	z-index: 9999;
+	min-height: 200px;
+	justify-content: space-between;
+}
+.wrapper .content {
+	text-align: left;
+	font-size: 1.5em;
+	z-index: 9999;
+}
+.wrapper .content .title {
+	font-size: 2em;
+}
+.wrapper .content .category {
+    text-transform: uppercase;
+    font-size: 0.6em;	
+}
